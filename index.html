@@ -5,42 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matías Ferreira – Diseñador Gráfico</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Space Grotesk', sans-serif;
     }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 overflow-x-hidden">
   <!-- Header -->
-  <header class="w-full py-8 px-6 text-center border-b">
-    <h1 class="text-4xl font-bold">Matías Ferreira</h1>
+  <header class="w-full py-10 px-6 text-center border-b sticky top-0 z-50 bg-white backdrop-blur shadow-sm">
+    <h1 class="text-5xl font-bold tracking-tight">Matías Ferreira</h1>
     <p class="mt-2 text-xl text-gray-600">Diseñador gráfico enfocado en identidad visual, experiencia digital y diseño editorial.</p>
   </header>
 
+  <!-- Hero Animation -->
+  <section class="flex justify-center items-center h-[60vh] bg-black text-white relative">
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_d9bnnx5m.json" background="transparent" speed="1" loop autoplay style="width: 300px; height: 300px;"></lottie-player>
+    <div class="absolute bottom-10 text-center">
+      <h2 class="text-3xl font-semibold">Diseño que impacta</h2>
+      <p class="text-lg">Explora mi universo visual</p>
+    </div>
+  </section>
+
   <!-- Portfolio Section -->
-  <section class="py-12 px-6">
-    <h2 class="text-3xl font-semibold mb-8 text-center">Portafolio</h2>
+  <section class="py-20 px-6">
+    <h2 class="text-4xl font-semibold mb-12 text-center">Portafolio</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="relative w-full h-64 overflow-hidden">
-        <div class="absolute inset-0 bg-gray-300"></div>
-        <div class="absolute bottom-0 left-0 bg-black bg-opacity-60 text-white p-4 w-full">
-          <h3 class="text-lg font-bold">Proyecto Uno</h3>
+      <div class="relative w-full h-96 group overflow-hidden">
+        <img src="https://via.placeholder.com/600x400" class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Proyecto Uno">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-6">
+          <h3 class="text-xl font-bold">Proyecto Uno</h3>
           <p class="text-sm">Branding para una marca de tecnología enfocada en experiencias humanas.</p>
         </div>
       </div>
-      <div class="relative w-full h-64 overflow-hidden">
-        <div class="absolute inset-0 bg-gray-300"></div>
-        <div class="absolute bottom-0 left-0 bg-black bg-opacity-60 text-white p-4 w-full">
-          <h3 class="text-lg font-bold">Proyecto Dos</h3>
+      <div class="relative w-full h-96 group overflow-hidden">
+        <img src="https://via.placeholder.com/600x400" class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Proyecto Dos">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-6">
+          <h3 class="text-xl font-bold">Proyecto Dos</h3>
           <p class="text-sm">Diseño editorial de una revista cultural con enfoque minimalista.</p>
         </div>
       </div>
-      <div class="relative w-full h-64 overflow-hidden">
-        <div class="absolute inset-0 bg-gray-300"></div>
-        <div class="absolute bottom-0 left-0 bg-black bg-opacity-60 text-white p-4 w-full">
-          <h3 class="text-lg font-bold">Proyecto Tres</h3>
+      <div class="relative w-full h-96 group overflow-hidden">
+        <img src="https://via.placeholder.com/600x400" class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Proyecto Tres">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-6">
+          <h3 class="text-xl font-bold">Proyecto Tres</h3>
           <p class="text-sm">UI/UX para aplicación de bienestar mental con enfoque en accesibilidad.</p>
         </div>
       </div>
@@ -48,27 +70,36 @@
   </section>
 
   <!-- About Section -->
-  <section class="py-12 px-6 bg-gray-50 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Sobre mí</h2>
+  <section class="py-20 px-6 bg-gray-50 text-center fade-up">
+    <h2 class="text-4xl font-semibold mb-4">Sobre mí</h2>
     <p class="max-w-2xl mx-auto text-gray-700 text-lg">
       Soy un diseñador gráfico multidisciplinar con pasión por la estética funcional. Me inspiran las ideas simples con alto impacto visual. Trabajo desde Madrid para marcas de todo el mundo. Mi enfoque une claridad, emoción y propósito.
     </p>
   </section>
 
   <!-- Services Section -->
-  <section class="py-12 px-6 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-8 text-center">Servicios</h2>
-    <ul class="grid md:grid-cols-3 gap-6 text-center">
-      <li class="p-4 border rounded-xl shadow">Branding</li>
-      <li class="p-4 border rounded-xl shadow">Diseño Editorial</li>
-      <li class="p-4 border rounded-xl shadow">Diseño UI/UX</li>
-    </ul>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-up">
+    <h2 class="text-4xl font-semibold mb-12 text-center">Servicios</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 border rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Branding</h3>
+        <p class="text-gray-600">Creación de marcas con personalidad visual sólida y memorable.</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Diseño Editorial</h3>
+        <p class="text-gray-600">Maquetación de publicaciones con equilibrio entre forma y contenido.</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Diseño UI/UX</h3>
+        <p class="text-gray-600">Interfaz intuitiva, fluida y centrada en la experiencia del usuario.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="py-12 px-6 bg-gray-100 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Contacto</h2>
-    <p class="text-gray-600 mb-6">¿Tienes un proyecto en mente? Escríbeme.</p>
+  <section class="py-20 px-6 bg-gray-100 text-center fade-up">
+    <h2 class="text-4xl font-semibold mb-4">Contacto</h2>
+    <p class="text-gray-600 mb-8">¿Tienes un proyecto en mente? Escríbeme.</p>
     <form action="#" method="POST" class="max-w-md mx-auto grid gap-4">
       <input type="text" placeholder="Nombre" class="border p-3 rounded-md w-full" required>
       <input type="email" placeholder="Correo electrónico" class="border p-3 rounded-md w-full" required>
@@ -82,5 +113,18 @@
   <footer class="text-center py-6 text-sm text-gray-500">
     © 2025 Matías Ferreira. Todos los derechos reservados.
   </footer>
+
+  <script>
+    // Fade-up animation on scroll
+    const faders = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
